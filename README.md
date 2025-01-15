@@ -19,14 +19,16 @@ Certifique-se de ter os seguintes softwares instalados:
    ``` 
 
 2.  Instale as dependências:    
-    ```npm install` 
+    ```
+    npm install
+    ``` 
     
 3.  Certifique-se de que o MongoDB está rodando localmente na porta padrão `27017`.
     
 4.  Inicie o servidor:
 ```
-    node script.js
-   ```
+node script.js
+```
 5.  Acesse a aplicação no navegador:
  ``` bash
  http://localhost:3000 
