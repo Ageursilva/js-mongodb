@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Devs do Futuro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Api Devs do Futuro</h1>
+        <p>Api de teste de integração com o MongoDB do projeto Devs do Futuro</p>
+        
+        <div class="endpoint">
+            <h3>GET /devs</h3>
+            <p>Retorna todos os desenvolvedores cadastrados.</p>
+            <code>GET http://localhost:3000/devs</code>
+        </div>
+
+        <div class="endpoint">
+            <h3>GET /devs/:name</h3>
+            <p>Retorna um desenvolvedor específico pelo nome.</p>
+            <code>GET http://localhost:3000/devs/{name}</code>
+        </div>
+
+        <div class="endpoint">
+            <h3>POST /devs</h3>
+            <p>Cadastra um novo desenvolvedor. Envie um JSON com os campos `name` e `age`.</p>
+            <code>POST http://localhost:3000/devs</code>
+            <pre>
+{
+  "name": "Nome do Dev",
+  "age": 25
+}
+            </pre>
+        </div>
+
+        <div class="endpoint">
+            <h3>PUT /devs/:name</h3>
+            <p>Atualiza a idade de um desenvolvedor pelo nome. Envie o campo `age` no corpo da requisição.</p>
+            <code>PUT http://localhost:3000/devs/{name}</code>
+            <pre>
+{
+  "age": 30
+}
+            </pre>
+        </div>
+
+        <div class="endpoint">
+            <h3>DELETE /devs/:name</h3>
+            <p>Deleta um desenvolvedor pelo nome.</p>
+            <code>DELETE http://localhost:3000/devs/{name}</code>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,11 +1,14 @@
 const {MongoClient} = require("mongodb");
 const bodyParser = require("body-parser");
 const express = require("express");
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
 const uri = "mongodb://localhost:27017";
 const client = new MongoClient(uri);
+
+app.use(express.static(path.join(__dirname, 'public')));
  
 let db, collection;
 async function connectToDatabase() {
@@ -21,7 +24,7 @@ async function connectToDatabase() {
 
 connectToDatabase().catch(console.error);
 app.get("/", (req, res) => {
-    res.send("API Devs do Futuro + MongoDB");
+    res.sendFile(path.join(__dirname, 'index.html'));
 })
 app.get("/devs", async (req, res) => {
     const devs = await collection.find().toArray();
